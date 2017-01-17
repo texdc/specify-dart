@@ -1,0 +1,12 @@
+language: dart
+sudo: false
+dart:
+- stable
+- dev
+matrix:
+  fast_finish: true
+  allow_failures:
+  - dart: dev
+script:
+- set -e && pub run test:test
+

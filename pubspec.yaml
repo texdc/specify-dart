@@ -1,0 +1,11 @@
+name: specify
+version: 0.0.1
+authors:
+- George Cooksey <george.cooksey.3@icloud.com>
+description: Simple, yet powerful and flexible specifications
+homepage: https://github.com/texdc/specify-dart
+environment:
+  sdk: '>=1.15.0 <2.0.0'
+dev_dependencies:
+  test: '>=0.12.0 <0.13.0'
+
