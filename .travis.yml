@@ -1,12 +1,16 @@
 language: dart
 sudo: false
 dart:
-- stable
-- dev
+  - stable
+  - dev
+env:
+  - TEST_PLATFORM=vm
+cache:
+  directories:
+    - $HOME/.pub-cache
 matrix:
   fast_finish: true
   allow_failures:
-  - dart: dev
+    - dart: dev
 script:
-- set -e && pub run test:test
-
+  - set -e && pub run test:test
