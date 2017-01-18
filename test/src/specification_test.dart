@@ -3,6 +3,8 @@
 import 'package:test/test.dart';
 import 'package:specify/specify.dart';
 
+import '../asset.dart';
+
 main() {
     group('specification ::', () {
         Specification spec;
@@ -21,10 +23,4 @@ main() {
             expect(spec(testValue), isTrue);
         });
     });
-}
-
-class SpecificationStub extends Specification<String> {
-    final String _control;
-    SpecificationStub(this._control);
-    bool isSatisfiedBy(String aString) => _control == aString;
 }
