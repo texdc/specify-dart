@@ -6,7 +6,7 @@ import 'package:specify/specify.dart';
 import '../asset.dart';
 
 main() {
-    group('specification ::', () {
+    group('Specification ::', () {
         Specification spec;
         const String testValue = 'test';
 
