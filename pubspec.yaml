@@ -1,7 +1,7 @@
 name: specify
-version: 0.0.1
+version: 1.0.0
 authors:
-- George D. Cooksey, III <george.cooksey.3@icloud.com>
+  - George D. Cooksey, III <texdc3@gmail.com>
 description: Simple, yet powerful and flexible specifications
 homepage: https://github.com/texdc/specify-dart
 environment:
