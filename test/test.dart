@@ -1,3 +1,11 @@
+///
+/// test.dart
+///
+/// @package   specify
+/// @license   MIT
+/// @copyright 2017 George D. Cooksey, III
+///
+
 library texdc.specify.test;
 
 import 'src/specification_test.dart' as specification;

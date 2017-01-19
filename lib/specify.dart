@@ -1,3 +1,11 @@
+///
+/// specify.dart
+///
+/// @package   specify
+/// @license   MIT
+/// @copyright 2017 George D. Cooksey, III
+///
+
 library texdc.specify;
 
 part 'src/specification.dart';

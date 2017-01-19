@@ -1,3 +1,11 @@
+///
+/// Filter.dart
+///
+/// @package   specify
+/// @license   MIT
+/// @copyright 2017 George D. Cooksey, III
+///
+
 part of texdc.specify;
 
 abstract class Filter<T> implements Function {

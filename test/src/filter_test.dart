@@ -1,4 +1,11 @@
 @TestOn('vm')
+///
+/// filter_test.dart
+///
+/// @package   specify
+/// @license   MIT
+/// @copyright 2017 George D. Cooksey, III
+///
 
 import 'package:test/test.dart';
 import 'package:specify/specify.dart';
