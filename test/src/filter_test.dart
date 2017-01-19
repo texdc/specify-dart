@@ -14,6 +14,10 @@ main() {
             expect(filter, new isInstanceOf<Function>());
         });
 
+        test('specification is required', () {
+            expect(() => new FilterStub.empty(), throwsArgumentError);
+        });
+
         test('filters out unspecified items', () {
             expect(filter([testValue, 'foo', 'testy']), equals([testValue, 'testy']));
         });
