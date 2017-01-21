@@ -14,11 +14,15 @@ import '../asset.dart';
 
 main() {
     group('CompositeSpecification ::', () {
-        test('is instance of Specification', () {
-            CompositeSpecification composite = new CompositeSpecificationStub([
+        CompositeSpecification composite;
+
+        setUp(() {
+            composite = new CompositeSpecificationStub([
                 new SpecificationStub('test')
             ]);
+        });
 
+        test('is instance of Specification', () {
             expect(composite, new isInstanceOf<Specification>());
         });
 
@@ -28,6 +32,10 @@ main() {
 
         test('constructor checks for empty specification list', () {
             expect(() => new CompositeSpecificationStub([]), throwsArgumentError);
+        });
+
+        test('specifications are immutable', () {
+            expect(() => composite.specifications = null, throwsNoSuchMethodError);
         });
     });
 }
