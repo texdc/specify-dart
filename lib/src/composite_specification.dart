@@ -9,10 +9,12 @@
 part of texdc.specify;
 
 abstract class CompositeSpecification<T> extends Specification<T> {
-    final List<Specification<T>> specifications;
+    final List<Specification<T>> _specifications;
+    
+    Iterable<Specification<T>> get specifications => _specifications.take(_specifications.length);
 
-    CompositeSpecification(this.specifications) {
-        if (specifications == null || specifications.isEmpty) {
+    CompositeSpecification(this._specifications) {
+        if (_specifications == null || _specifications.isEmpty) {
             throw new ArgumentError.notNull('specifications');
         }
     }
