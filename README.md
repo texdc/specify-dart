@@ -6,7 +6,7 @@ testable, and reusable manner.
 ## examples
 
 ```dart
-import 'package:texdc/specify';
+import 'package:specify/specify.dart';
 
 class StringContains extends Specification<String> {
     final String _substring;
@@ -42,7 +42,7 @@ main() {
 ### filters
 Filtering with specifications can be very powerful, especially when used with `CompositeSpecification`.
 ```dart
-import 'package:texdc\specify';
+import 'package:specify/specify.dart';
 
 class StringLength extends Specification<String> {
     final int _length;
