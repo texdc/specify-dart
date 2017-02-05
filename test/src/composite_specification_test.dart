@@ -45,5 +45,31 @@ main() {
             expect(result.specifications.length, equals(1));
             expect(composite.specifications.length, equals(2));
         });
+
+        test('isSpecialCaseOf checks equality', () {
+            expect(composite.isSpecialCaseOf(new CompositeSpecificationStub([
+                new SpecificationStub('bar')
+            ])), isFalse);
+        });
+
+        test('isSpecialCaseOf checks contained specifications', () {
+            expect(composite.isSpecialCaseOf(new CompositeSpecificationStub([
+                new SpecificationStub('test')
+            ])), isTrue);
+        });
+
+        test('isGeneralizationOf checks equality', () {
+            expect(composite.isGeneralizationOf(new CompositeSpecificationStub([
+                new SpecificationStub('bar')
+            ])), isFalse);
+        });
+
+        test('isGeneralizationOf checks contained specifications', () {
+            expect(composite.isGeneralizationOf(new CompositeSpecificationStub([
+                new SpecificationStub('test'),
+                new SpecificationStub('foo'),
+                new SpecificationStub('bar')
+            ])), isTrue);
+        });
     });
 }

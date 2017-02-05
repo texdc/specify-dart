@@ -29,5 +29,13 @@ main() {
             expect(spec('foo'), isFalse);
             expect(spec(testValue), isTrue);
         });
+
+        test('isSpecialCaseOf compares equality', () {
+            expect(spec.isSpecialCaseOf(new SpecificationStub('foo')), isFalse);
+        });
+
+        test('isGeneralizationOf compares equality', () {
+            expect(spec.isGeneralizationOf(new SpecificationStub(testValue)), isTrue);
+        });
     });
 }

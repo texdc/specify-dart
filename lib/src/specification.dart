@@ -12,4 +12,8 @@ abstract class Specification<T> implements Function {
     bool isSatisfiedBy(T aCandidate);
 
     bool call(T aCandidate) => isSatisfiedBy(aCandidate);
+
+    bool isSpecialCaseOf(Specification anOther) => this == anOther;
+
+    bool isGeneralizationOf(Specification anOther) => this == anOther;
 }

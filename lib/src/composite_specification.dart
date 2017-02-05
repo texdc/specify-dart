@@ -19,6 +19,14 @@ abstract class CompositeSpecification<T> extends Specification<T> {
         }
     }
 
+    bool isSpecialCaseOf(Specification<T> anOther) {
+        return this == anOther || _specifications.contains(anOther) ||
+            (anOther is CompositeSpecification<T> &&
+                anOther._specifications.every((Specification<T> spec) => isSpecialCaseOf(spec)));
+    }
+
+    bool isGeneralizationOf(Specification<T> anOther) => anOther.isSpecialCaseOf(this);
+
     CompositeSpecification<T> remainderUnsatisfiedBy(T aCandidate) {
         CompositeSpecification<T> remainder = copy(this);
         remainder._specifications.removeWhere(
@@ -29,7 +37,7 @@ abstract class CompositeSpecification<T> extends Specification<T> {
 
     CompositeSpecification<T> copy(CompositeSpecification<T> other);
 
-    int get hashCode => _specifications.hashCode;
+    int get hashCode => 53 * 3 + _specifications.hashCode;
 
     bool operator ==(other) => other is CompositeSpecification<T>
         && _specifications == other._specifications;
