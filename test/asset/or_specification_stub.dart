@@ -13,4 +13,6 @@ class OrSpecificationStub extends OrSpecification<String> {
         new SpecificationStub('foo'),
         new SpecificationStub('bar')
     ]);
+
+    OrSpecification copy(OrSpecification other) => other;
 }

@@ -12,4 +12,8 @@ class CompositeSpecificationStub extends CompositeSpecification<String> {
     CompositeSpecificationStub(List<Specification<String>> specs) : super(specs);
 
     bool isSatisfiedBy(String aString) => specifications.any((Specification<String> spec) => spec(aString));
+
+    CompositeSpecification copy(CompositeSpecificationStub other) {
+        return new CompositeSpecificationStub(other.specifications.toList());
+    }
 }

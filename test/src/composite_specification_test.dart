@@ -18,7 +18,8 @@ main() {
 
         setUp(() {
             composite = new CompositeSpecificationStub([
-                new SpecificationStub('test')
+                new SpecificationStub('test'),
+                new SpecificationStub('foo')
             ]);
         });
 
@@ -36,6 +37,13 @@ main() {
 
         test('specifications are immutable', () {
             expect(() => composite.specifications = null, throwsNoSuchMethodError);
+        });
+
+        test('remainderUnsatisfiedBy returns all unsatisfied specifications', () {
+            var result = composite.remainderUnsatisfiedBy('foo');
+            expect(result, new isInstanceOf<CompositeSpecification>());
+            expect(result.specifications.length, equals(1));
+            expect(composite.specifications.length, equals(2));
         });
     });
 }

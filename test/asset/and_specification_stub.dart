@@ -1,6 +1,6 @@
 ///
 /// AndSpecificationStub.dart
-/// 
+///
 /// @package   specify
 /// @license   MIT
 /// @copyright 2017 George D. Cooksey, III
@@ -13,4 +13,6 @@ class AndSpecificationStub extends AndSpecification<String> {
         new SpecificationStub('foo'),
         new SpecificationStub('bar')
     ]);
+
+    AndSpecification copy(AndSpecification other) => other;
 }
